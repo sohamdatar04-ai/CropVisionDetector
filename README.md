@@ -1,58 +1,115 @@
-# Krishi Saathi AI (कृषि साथी AI)
+# cropVision
 
-> **Offline-First Crop Stress Detection & Field Advisory Platform for Farmers**  
-> Hackathon Prototype Foundation & UI Shell
+A responsive React + TypeScript web app for crop health monitoring and field advisory. The project is designed as an offline-first dashboard for farmers and agronomists to assess crop stress, review field conditions, track weather, and access actionable recommendations from a mobile-friendly interface.
 
----
+## Overview
 
-## 🌾 Overview
-Krishi Saathi AI is designed for farmers operating in rural and edge environments with intermittent or non-existent cellular coverage. It delivers on-device computer vision for immediate foliar disease diagnosis, nutrient deficiency identification, micro-climate weather analysis, and actionable agronomic advisories.
+cropVision brings together the core ideas of:
 
----
+- crop disease and stress detection workflows
+- field and plot management
+- weather and climate awareness
+- offline-first experience for low-connectivity areas
+- multilingual farmer-friendly UI
+- agronomy guidance through a conversational assistant panel
 
-## 🚀 Tech Stack
-- **Framework:** React 19 + TypeScript
-- **Bundler & Dev Server:** Vite 8
-- **Styling:** Tailwind CSS v4 (`@tailwindcss/vite`)
-- **Navigation:** React Router 7 (`react-router-dom`)
-- **Icons:** Lucide React (`lucide-react`)
-- **Typography:** Plus Jakarta Sans / Inter
+The app is structured as a front-end prototype and dashboard experience for a modern agricultural decision support tool.
 
----
+## Features
 
-## 📱 Architecture & Pages
-- **`/` (Home):** Value proposition, quick diagnostic scanner CTA, edge telemetry, sample cards, and interactive component verifier.
-- **`/dashboard`:** Farm overview, aggregated crop health vigor (%), stress risk matrix, plot telemetry list with alert filters.
-- **`/analyze`:** Field diagnostic scanner shell with crop selector, on-device model status, leaf image dropzone, sample disease presets, and simulated pathology report.
-- **`/history`:** Historical audit log of plant pathology scans, confidence scores, local queue indicators, and detail modal.
-- **`/assistant`:** Conversational field agronomist UI shell with prompt chips, safe dosage guardrails, and speech/photo placeholders.
-- **`/fields`:** Farm demarcation manager with acreage calculations, crop stage badges, and an interactive "Add Plot" modal.
-- **`/weather`:** Micro-climate telemetry, 5-day agri-forecast, and calculated optimal pesticide/fungicide spray window indicators.
-- **`/offline`:** On-device neural model manager, IndexedDB local storage monitor, and queued scan synchronizer.
-- **`/settings`:** Multilingual language selector (English, हिंदी, मराठी, ਪੰਜਾਬੀ), offline sync preferences, and sunlight contrast calibration.
+- Home landing experience with product messaging and quick action CTA
+- Dashboard summarizing crop health, risk levels, and field status
+- Analyze page for crop inspection and result exploration
+- History page showing previous diagnostics and scan records
+- AI assistant page for agronomic recommendations and guidance
+- Fields section for managing farms and plot data
+- Weather page with agricultural forecast and spray-window indicators
+- Offline page for local storage and device-ready behavior
+- Settings page with localization and preference controls
+- Responsive navigation optimized for mobile and field use
 
----
+## Tech stack
 
-## 🧩 Reusable UI Design System
-Built for touchscreens and outdoor sunlight readability:
-- **`Button`:** Variants (`primary`, `secondary`, `outline`, `ghost`, `danger`, `earth`), sizes (`sm`, `md`, `lg`, `xl`), fullWidth, left/right icons, loading spinner states.
-- **`Card`:** (`Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`) with `default`, `elevated`, `outlined`, `interactive`, and `accent` agricultural tints.
-- **`Badge`:** Status tags (`success`, `warning`, `danger`, `info`, `offline`, `neutral`, `earth`) with optional pulse/dot indicators.
-- **`Modal`:** Touch-friendly dialog with mobile bottom-sheet conversion, background backdrop, keyboard ESC handling, and header/footer customization.
-- **`Toast`:** Context-based notifications (`useToast()`) supporting `success`, `warning`, `error`, `info`, and `offline` alerts with auto-dismiss.
+- React 19
+- TypeScript
+- Vite
+- React Router
+- Tailwind CSS
+- Lucide React icons
+- Context-based app state management
 
----
+## Project structure
 
-## 🛠️ Running the Project
+```text
+cropVision/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── i18n/
+│   ├── pages/
+│   ├── services/
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── README.md
+└── ...
+```
+
+## Main routes
+
+- `/` — landing page
+- `/dashboard` — farm health overview
+- `/analyze` — crop analysis flow
+- `/result/:id` — diagnostic result details
+- `/history` — previous scan records
+- `/assistant` — advisory assistant UI
+- `/fields` — field and plot management
+- `/weather` — climate and forecast panel
+- `/offline` — offline/local-first features
+- `/settings` — app preferences and language settings
+
+## Getting started
+
+### Install dependencies
 
 ```bash
-# Install dependencies
 npm install
+```
 
-# Start development server
+### Start the app in development mode
+
+```bash
 npm run dev
+```
 
-# Build production bundle
+The app will usually run at:
+
+```text
+http://localhost:5173/
+```
+
+### Build for production
+
+```bash
 npm run build
 ```
-The dev server runs locally at: `http://localhost:5173/`
+
+### Lint the project
+
+```bash
+npm run lint
+```
+
+## Notes
+
+This project is a front-end prototype focused on UI/UX and product flow for a modern crop monitoring platform. It includes route-based pages and reusable UI components designed for farmers working in low-connectivity environments, but it does not currently include a live ML inference backend or production data integration.
+
+## License
+
+This project is currently intended for local development and prototype use within the workspace.
